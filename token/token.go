@@ -35,11 +35,21 @@ const (
 	// Keywords
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	ELSE     = "ELSE"
+	IF       = "IF"
+	RETURN   = "RETURN"
 )
 
 var keywords = map[string]Type{
-	"fn":  "FUNCTION",
-	"let": "LET",
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
 }
 
 // LookupIdentifier returns the token type (keyword or variable name) of a given identifier
