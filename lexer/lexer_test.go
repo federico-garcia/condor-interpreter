@@ -13,6 +13,8 @@ func TestNextToken(t *testing.T) {
 	}
 
 	let result = add(five, seven);
+
+	!-/*<>
 	`
 
 	tests := []struct {
@@ -54,6 +56,12 @@ func TestNextToken(t *testing.T) {
 		{token.IDENT, "seven"},
 		{token.RPAREN, ")"},
 		{token.SEMICOLON, ";"},
+		{token.BANG, "!"},
+		{token.MINUS, "-"},
+		{token.SLASH, "/"},
+		{token.ASTERISK, "*"},
+		{token.LT, "<"},
+		{token.GT, ">"},
 		{token.EOF, ""},
 	}
 
