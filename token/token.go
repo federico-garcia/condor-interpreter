@@ -30,3 +30,17 @@ const (
 	FUNCTION = "FUNCTION"
 	LET      = "LET"
 )
+
+var keywords = map[string]Type{
+	"fn":  "FUNCTION",
+	"let": "LET",
+}
+
+// LookupIdentifier returns the token type (keyword or variable name) of a given identifier
+func LookupIdentifier(s string) Type {
+	tokenType, ok := keywords[s]
+	if ok {
+		return tokenType
+	}
+	return IDENT
+}
