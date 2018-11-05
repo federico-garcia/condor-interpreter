@@ -17,6 +17,7 @@ func TestNextToken(t *testing.T) {
 	!-/*<>
 	true false if else return
 	== !=
+	^
 	`
 
 	tests := []struct {
@@ -71,6 +72,7 @@ func TestNextToken(t *testing.T) {
 		{token.RETURN, "return"},
 		{token.EQ, "=="},
 		{token.NOT_EQ, "!="},
+		{token.ILLEGAL, "^"},
 		{token.EOF, ""},
 	}
 
